@@ -1024,6 +1024,8 @@ static int cpufreq_add_dev(struct sys_device *sys_dev)
 		    (cpumask_test_cpu(cpu, cp->related_cpus))) {
 			policy->governor = cp->governor;
 			found = 1;
+			policy->min = cp->min;
+			policy->max = cp->max;
 			break;
 		}
 	}
